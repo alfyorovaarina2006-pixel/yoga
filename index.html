@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дыхание — студия йоги</title>
+<meta name="description" content="Студия йоги «Дыхание»: хатха, виньяса, йога-нидра и занятия для начинающих. Первое занятие бесплатно.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mist:#EDF1EF; --pine:#1D3A35; --moss:#6E8F7B; --sun:#E9B44C; --ink:#14201E; --white:#fff;
+  --head:"Tenor Sans","Segoe UI",sans-serif; --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--mist);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.lead{max-width:56ch;color:#44544f;margin-bottom:40px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(237,241,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid #d3ddd9}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--head);font-size:22px;text-decoration:none;color:var(--pine)}
+nav{display:flex;gap:24px}
+nav a{text-decoration:none;font-size:15px;color:#33433f}
+nav a:hover{color:var(--pine);text-decoration:underline;text-underline-offset:5px}
+
+/* hero */
+.hero{background:var(--pine);color:var(--mist);padding:72px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,68px);margin-bottom:20px}
+.hero p{max-width:44ch;color:#c5d6d0;margin-bottom:32px;font-size:19px}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;background:var(--sun);color:var(--ink);font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 16px var(--body);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--mist);border:1px solid #ffffff55;margin-left:8px}
+.breath{position:relative;aspect-ratio:1;max-width:380px;width:100%;margin:0 auto;display:grid;place-items:center}
+.breath i{position:absolute;border-radius:50%;inset:0;border:1px solid #8fb3a3;opacity:.5;animation:breathe 8s ease-in-out infinite}
+.breath i:nth-child(2){inset:12%;animation-delay:.4s}
+.breath i:nth-child(3){inset:24%;background:#2b524a;border-color:transparent;opacity:1;animation-delay:.8s}
+.breath span{position:relative;font-family:var(--head);font-size:22px;color:var(--sun)}
+.breath span::before{content:"вдох";animation:word 8s infinite}
+@keyframes breathe{0%,100%{transform:scale(.72)}50%{transform:scale(1)}}
+@keyframes word{0%,49%{content:"вдох"}50%,100%{content:"выдох"}}
+
+/* classes */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--white);padding:28px;border-radius:20px 4px 20px 4px}
+.card h3{font-size:22px;margin-bottom:8px;color:var(--pine)}
+.card p{font-size:15px;color:#4a5a55}
+.tag{display:inline-block;margin-top:14px;font-size:13px;color:var(--moss);font-weight:600}
+
+/* schedule */
+.sched{background:var(--white)}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid #e1e8e5;font-size:16px}
+th{font-family:var(--head);font-weight:400;color:var(--moss);font-size:15px}
+td:first-child{font-weight:600;color:var(--pine);white-space:nowrap}
+
+/* teachers */
+.person{display:flex;gap:18px;align-items:flex-start}
+.avatar{flex:none;width:64px;height:64px;border-radius:50%;background:var(--moss);color:var(--white);display:grid;place-items:center;font-family:var(--head);font-size:24px}
+.person h3{font-size:20px}
+.person p{font-size:15px;color:#4a5a55}
+
+/* prices */
+.prices .card{display:flex;flex-direction:column;border-radius:4px 20px 4px 20px}
+.price{font-family:var(--head);font-size:34px;color:var(--pine);margin:10px 0}
+.price small{font-size:15px;color:#667771}
+.card.main{background:var(--pine);color:var(--mist)}
+.card.main h3,.card.main .price{color:var(--sun)}
+.card.main p,.card.main small{color:#c5d6d0}
+
+/* form */
+.contact{background:var(--pine);color:var(--mist)}
+.contact .lead{color:#c5d6d0}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+form{display:grid;gap:14px}
+label{font-size:14px;color:#c5d6d0}
+input,select{width:100%;padding:13px 14px;margin-top:4px;border-radius:10px;border:1px solid #ffffff44;background:#ffffff14;color:var(--white);font:16px var(--body)}
+select option{color:var(--ink)}
+input::placeholder{color:#9fb7ae}
+.info p{margin-bottom:10px}
+#ok{display:none;color:var(--sun)}
+
+footer{padding:28px 0;text-align:center;font-size:14px;color:#667771}
+
+@media(max-width:800px){
+  .hero .wrap,.contact .wrap{grid-template-columns:1fr}
+  nav{gap:14px}
+  nav a:nth-child(n+4){display:none}
+  section{padding:64px 0}
+  .btn.ghost{margin:10px 0 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .breath i{animation:none}.breath span::before{animation:none}.btn{transition:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Дыхание</a>
+    <nav aria-label="Основное меню">
+      <a href="#classes">Направления</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#teachers">Преподаватели</a>
+      <a href="#prices">Цены</a>
+      <a href="#contact">Запись</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Йога, в которой есть место для вдоха</h1>
+        <p>Небольшие группы, живая практика и внимательные преподаватели. Приходите без опыта: подберём уровень и покажем всё с нуля.</p>
+        <a class="btn" href="#contact">Записаться на пробное</a>
+        <a class="btn ghost" href="#schedule">Смотреть расписание</a>
+      </div>
+      <div class="breath" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+    </div>
+  </div>
+
+  <section id="classes">
+    <div class="wrap">
+      <h2>Направления</h2>
+      <p class="lead">Выберите практику под своё состояние: от мягкой растяжки до динамичного потока.</p>
+      <div class="grid">
+        <div class="card"><h3>Хатха-йога</h3><p>Спокойный темп, чёткая работа с asana и дыханием. Хороший старт для новичков.</p><span class="tag">60 минут · для всех</span></div>
+        <div class="card"><h3>Виньяса-флоу</h3><p>Плавная связка движений на дыхании. Укрепляет тело и собирает внимание.</p><span class="tag">75 минут · средний уровень</span></div>
+        <div class="card"><h3>Йога-нидра</h3><p>Глубокое расслабление лёжа. Помогает снять напряжение и лучше спать.</p><span class="tag">45 минут · для всех</span></div>
+        <div class="card"><h3>Спина и шея</h3><p>Мягкая практика для тех, кто много сидит за компьютером.</p><span class="tag">60 минут · для всех</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="sched">
+    <div class="wrap">
+      <h2>Расписание на неделю</h2>
+      <p class="lead">Коврики, блоки и пледы есть в студии. Приходите за 10 минут до начала.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>День</th><th>Время</th><th>Занятие</th><th>Преподаватель</th></tr></thead>
+          <tbody>
+            <tr><td>Понедельник</td><td>08:00</td><td>Хатха-йога</td><td>Анна</td></tr>
+            <tr><td>Понедельник</td><td>19:30</td><td>Виньяса-флоу</td><td>Михаил</td></tr>
+            <tr><td>Вторник</td><td>12:00</td><td>Спина и шея</td><td>Анна</td></tr>
+            <tr><td>Среда</td><td>19:30</td><td>Хатха-йога</td><td>Елена</td></tr>
+            <tr><td>Четверг</td><td>08:00</td><td>Виньяса-флоу</td><td>Михаил</td></tr>
+            <tr><td>Пятница</td><td>20:00</td><td>Йога-нидра</td><td>Елена</td></tr>
+            <tr><td>Суббота</td><td>10:00</td><td>Хатха-йога</td><td>Анна</td></tr>
+            <tr><td>Воскресенье</td><td>11:00</td><td>Йога-нидра</td><td>Елена</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="teachers">
+    <div class="wrap">
+      <h2>Преподаватели</h2>
+      <p class="lead">Сертифицированные инструкторы с опытом работы с новичками и людьми после травм.</p>
+      <div class="grid">
+        <div class="person"><div class="avatar">А</div><div><h3>Анна</h3><p>Хатха и спина. 9 лет практики, мягко поправляет и объясняет простыми словами.</p></div></div>
+        <div class="person"><div class="avatar">М</div><div><h3>Михаил</h3><p>Виньяса. Бывший спортсмен, строит динамичные занятия с упором на технику.</p></div></div>
+        <div class="person"><div class="avatar">Е</div><div><h3>Елена</h3><p>Йога-нидра и дыхательные практики. Ведёт вечерние занятия в тишине и полумраке.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" class="prices" style="background:var(--white)">
+    <div class="wrap">
+      <h2>Цены</h2>
+      <p class="lead">Первое занятие бесплатно. Абонементы действуют два месяца со дня покупки.</p>
+      <div class="grid">
+        <div class="card"><h3>Разовое</h3><div class="price">900 ₽</div><p>Одно занятие в любом направлении.</p></div>
+        <div class="card main"><h3>8 занятий</h3><div class="price">5 600 ₽ <small>700 ₽ за занятие</small></div><p>Подходит для двух занятий в неделю.</p></div>
+        <div class="card"><h3>Безлимит</h3><div class="price">7 900 ₽ <small>на месяц</small></div><p>Любые занятия без ограничений.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="info">
+        <h2>Запишитесь на пробное</h2>
+        <p class="lead">Оставьте контакты, и мы напишем в течение дня, чтобы подтвердить время.</p>
+        <p><strong>Адрес:</strong> г. Москва, ул. Примерная, 12, 2 этаж</p>
+        <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+        <p><strong>Почта:</strong> <a href="mailto:hello@dyhanie.example">hello@dyhanie.example</a></p>
+      </div>
+      <form id="form" novalidate>
+        <label>Ваше имя<input type="text" name="name" placeholder="Например, Мария" required></label>
+        <label>Телефон<input type="tel" name="phone" placeholder="+7" required></label>
+        <label>Направление
+          <select name="style">
+            <option>Хатха-йога</option><option>Виньяса-флоу</option><option>Йога-нидра</option><option>Спина и шея</option><option>Пока не знаю</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <p id="ok" role="status">Спасибо! Мы скоро свяжемся с вами.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Студия йоги «Дыхание»</footer>
+
+<script>
+document.getElementById('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target;
+  if(!f.name.value.trim() || !f.phone.value.trim()){
+    (f.name.value.trim() ? f.phone : f.name).focus();
+    return;
+  }
+  // Здесь подключите отправку на ваш сервер или сервис форм
+  document.getElementById('ok').style.display = 'block';
+  f.reset();
+});
+</script>
+</body>
+</html>
